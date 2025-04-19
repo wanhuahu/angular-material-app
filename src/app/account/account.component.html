@@ -1,1 +1,41 @@
-<p>account works!</p>
+<div class="margin-left-200">
+    <form [formGroup]='formGroup' (ngSubmit)="login()">
+      <mat-form-field class="text-align-left">
+        <mat-label>Email</mat-label>
+        <input
+          id="login-email-input"
+          data-qa="email-input-field"
+          matInput
+          placeholder="Email"
+          formControlName="email" />
+        <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          id="login-password-input"
+          data-qa="password-input-field"
+          matInput
+          type="password"
+          [type]="hidePassword ? 'password' : 'text'"
+          placeholder="Password"
+          formControlName="password"/>
+        <mat-icon
+          matSuffix
+          (click)="hidePassword = !hidePassword"
+        >{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
+          Invalid password entered
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button class='login-submit-button' id="login-submit-button" [disabled]="!formGroup.valid" color="primary">
+          Log in
+        </button>
+      </div>
+    </form>
+  </div>
+ 
