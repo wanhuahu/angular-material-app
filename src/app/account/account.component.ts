@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { AngularMaterialModule } from '../../shared/material.module';
 
@@ -9,7 +9,6 @@ import { AngularMaterialModule } from '../../shared/material.module';
   imports: [
     AngularMaterialModule,
     CommonModule,
-    FormsModule,
     ReactiveFormsModule
   ],
   templateUrl: './account.component.html',
