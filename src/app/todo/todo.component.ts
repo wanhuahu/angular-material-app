@@ -56,7 +56,7 @@ export class TodoComponent {
     this.dataSource = new MatTableDataSource(this.tasks);
   }
 
-  underline(no: number) {
+  complete(no: number) {
     const item = this.tasks.find(person => person.no === no);
     item!.completed = !item!.completed;
     this.remaining = this.tasks.filter(i => !i.completed).length;
